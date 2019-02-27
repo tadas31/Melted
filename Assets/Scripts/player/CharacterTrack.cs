@@ -27,6 +27,7 @@ public class CharacterTrack : MonoBehaviour
 
         _snowMaterial = _terain.GetComponent<MeshRenderer>().material;
         _snowMaterial.SetTexture("_Splat", _splatmap = new RenderTexture(1024, 1024, 0, RenderTextureFormat.ARGBFloat));
+
     }
 
     // Update is called once per frame
