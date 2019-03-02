@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: f12f6379a5269424cae551faad5f7b04
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
+  defaultTextures:
+  - _SnowTex: {instanceID: 0}
+  - _GroundTex: {fileID: 2800000, guid: 0fb6105e6dc65fb46afadbf8a8bf5091, type: 3}
+  - _Splat: {instanceID: 0}
   nonModifiableTextures: []
   userData: 
   assetBundleName: 
