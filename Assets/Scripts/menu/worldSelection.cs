@@ -11,12 +11,6 @@ public class worldSelection : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TaskOnWorldOneClick()
     {
         SceneManager.LoadScene("World1");
