@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     {
         pauseCanvas = GameObject.Find("Pause").GetComponent<Canvas>();
         pauseCanvas.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
