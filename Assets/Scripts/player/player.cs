@@ -5,24 +5,28 @@ using System;
 
 public class player : MonoBehaviour
 {
+    public static player Instance { set; get; }
+
+
     public float moveSpeed;
     public int health = 100;
     private int currHealth;
 
     public event Action<float, float> OnHealthPctChanged = delegate { };
     public PlayerGun theGun;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Instance = this;
         currHealth = health;
-
     }
 
     // Update is called once per frame
     void Update()
     {
+
         transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
 
         if (Input.GetMouseButtonDown(0))
@@ -31,8 +35,6 @@ public class player : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
             theGun.isFiring = false;
-
-
 
 
         if (Input.GetKeyDown(KeyCode.KeypadMinus))
