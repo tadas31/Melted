@@ -15,7 +15,6 @@ public class StartSound : MonoBehaviour
         if (other.tag == "Player")
         {
             GetComponent<AudioSource>().Play();
-            Debug.Log(GetComponent<AudioSource>().clip.name);
         }
            // FindObjectOfType<AudioManager>().Play("Fireplace");
     }

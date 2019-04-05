@@ -14,7 +14,6 @@ public class BurnLog : MonoBehaviour
 
     IEnumerator DestroyObject()
     {
-        Debug.Log("burn");
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }

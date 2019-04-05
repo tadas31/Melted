@@ -66,7 +66,6 @@ public class player : MonoBehaviour
         if (other.tag == "Log")
         {
             Heal(15, 0.5f);
-            Debug.Log(other.name);
         }
         
     }
