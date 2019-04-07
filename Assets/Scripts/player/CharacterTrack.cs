@@ -42,7 +42,7 @@ public class CharacterTrack : MonoBehaviour
         {
             if (Physics.Raycast(_player[i].position, -Vector3.up, out _groundHit, 1f, _layerMask))
             {
-                if (_player[i].name == "Player")
+                if (_player[i].tag == "Player")
                     _brushSize = 5;
                 else
                     _brushSize = 2;

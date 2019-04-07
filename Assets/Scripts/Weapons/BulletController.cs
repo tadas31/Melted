@@ -20,7 +20,7 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enviroment")
+        if (other.tag == "Enviroment" || other.tag == "Ground")
         {
             Destroy(gameObject, 0.3f);
             CharacterTrack.Instance._player.Remove(gameObject.transform);

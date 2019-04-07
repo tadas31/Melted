@@ -38,8 +38,6 @@ public class PlayerGun : MonoBehaviour
                     firePos.LookAt(new Vector3(pointToLook.x, 1, pointToLook.z));
                 }
 
-                player.Instance.Damage(5);
-
                 BulletController newBullet = Instantiate(bullet, firePos.position, firePos.rotation) as BulletController;
                 newBullet.speed = bulletSpeed;
             }
