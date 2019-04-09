@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 77f1f951ab60fa64c8112ae4ce772916
+=======
+guid: bbaaf2f0db07c6b40aa0a072b4b600af
+>>>>>>> develop
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -60,7 +64,11 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
+<<<<<<< HEAD
     maxTextureSize: 8
+=======
+    maxTextureSize: 32
+>>>>>>> develop
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
