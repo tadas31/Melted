@@ -17,6 +17,7 @@ public class CharacterTrack : MonoBehaviour
     private Material _drawMaterial;
     private Material _snowMaterial;
     private RenderTexture _splatmap;
+    private Collider col;
 
     RaycastHit _groundHit;
     int _layerMask;
@@ -31,6 +32,7 @@ public class CharacterTrack : MonoBehaviour
 
         _snowMaterial = _terain.GetComponent<MeshRenderer>().material;
         _snowMaterial.SetTexture("_Splat", _splatmap = new RenderTexture(1024, 1024, 0, RenderTextureFormat.ARGBFloat));
+        col = gameObject.GetComponent<Collider>();
 
     }
 
@@ -40,7 +42,7 @@ public class CharacterTrack : MonoBehaviour
 
         for (int i = 0; i < _player.Count; i++)
         {
-            if (Physics.Raycast(_player[i].position, -Vector3.up, out _groundHit, 1f, _layerMask))
+            if (Physics.Raycast(_player[i].position - new Vector3(0,2,0), -Vector3.up, out _groundHit, 1f, _layerMask))
             {
                 if (_player[i].tag == "Player")
                     _brushSize = 5;
