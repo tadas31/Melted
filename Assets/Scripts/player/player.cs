@@ -14,11 +14,18 @@ public class player : MonoBehaviour
 
     public event Action<float, float> OnHealthPctChanged = delegate { };
     public PlayerGun theGun;
-    
+
+    public GameObject spawnPoints;
+    private Transform[] arrayOfspawnPoints;
 
     // Start is called before the first frame update
     void Start()
     {
+        arrayOfspawnPoints = spawnPoints.GetComponentsInChildren<Transform>();
+        System.Random rand = new System.Random();
+        int point = rand.Next(0, arrayOfspawnPoints.Length);
+        gameObject.transform.position = arrayOfspawnPoints[point].position;
+
         Instance = this;
         currHealth = health;
     }
