@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class menu : MonoBehaviour
 {
     public Canvas about;
+    public Canvas settings;
 
      public void TaskOnPlayClick()
     {
@@ -15,7 +16,7 @@ public class menu : MonoBehaviour
 
     public void TaskOnSettingsClick()
     {
-
+        settings.gameObject.SetActive(true);
     }
 
     public void TaskOnLeaderBordsClick()

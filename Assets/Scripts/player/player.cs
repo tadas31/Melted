@@ -18,9 +18,13 @@ public class player : MonoBehaviour
     public GameObject spawnPoints;
     private Transform[] arrayOfspawnPoints;
 
+    private inputManager inputManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        inputManager = GameObject.FindObjectOfType<inputManager>();
+
         arrayOfspawnPoints = spawnPoints.GetComponentsInChildren<Transform>();
         System.Random rand = new System.Random();
         int point = rand.Next(0, arrayOfspawnPoints.Length);
@@ -34,14 +38,31 @@ public class player : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
+       // transform.Translate(moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0, moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);
 
-        if (Input.GetMouseButtonDown(0))
-        {
+        if (inputManager.GetButton("up"))
+            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        if (inputManager.GetButton("down"))
+            transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+        if (inputManager.GetButton("left"))
+            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        if (inputManager.GetButton("right"))
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    theGun.isFiring = true;
+        //}
+        //if (Input.GetMouseButtonUp(0))
+        //    theGun.isFiring = false;
+
+        if (inputManager.GetButtonDown("fire"))
             theGun.isFiring = true;
-        }
-        if (Input.GetMouseButtonUp(0))
+        if (inputManager.GetButtonUp("fire"))
             theGun.isFiring = false;
+
+
+        
 
 
         if (Input.GetKeyDown(KeyCode.KeypadMinus))
