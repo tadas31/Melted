@@ -5,21 +5,25 @@ using System.Linq;
 
 public class inputManager : MonoBehaviour
 {
-    Dictionary<string, KeyCode> buttonNames;
+    Dictionary<string, KeyCode> buttonNames = new Dictionary<string, KeyCode>();
 
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        buttonNames = new Dictionary<string, KeyCode>();
+
+        foreach(KeyBindings k in SaveManager.Instance.getKeyBindings())
+            buttonNames[k.keyName] = k.code;
+
+       // buttonNames = SaveManager.Instance.getKeyBindings();
 
 
         //--------------read from saves file-----------------
-        buttonNames["up"] = KeyCode.W;
-        buttonNames["down"] = KeyCode.S;
-        buttonNames["left"] = KeyCode.A;
-        buttonNames["right"] = KeyCode.D;
-        buttonNames["fire"] = KeyCode.Mouse0;
+        //buttonNames["up"] = KeyCode.W;
+        //buttonNames["down"] = KeyCode.S;
+        //buttonNames["left"] = KeyCode.A;
+        //buttonNames["right"] = KeyCode.D;
+        //buttonNames["fire"] = KeyCode.Mouse0;
 
     }
 
@@ -69,5 +73,6 @@ public class inputManager : MonoBehaviour
     public void SetButtonForKey(string buttonName, KeyCode keyCode)
     {
         buttonNames[buttonName] = keyCode;
+        SaveManager.Instance.setKeyBinding(buttonName, keyCode);
     }
 }

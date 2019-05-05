@@ -8,6 +8,7 @@ public class menu : MonoBehaviour
 {
     public Canvas about;
     public Canvas settings;
+    public Canvas leaderBord;
 
      public void TaskOnPlayClick()
     {
@@ -21,7 +22,7 @@ public class menu : MonoBehaviour
 
     public void TaskOnLeaderBordsClick()
     {
-
+        leaderBord.gameObject.SetActive(true);
     }
 
     public void TaskOnAboutClick()
