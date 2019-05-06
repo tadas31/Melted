@@ -39,6 +39,9 @@ public class PlayerGun : MonoBehaviour
                 }
 
                 BulletController newBullet = Instantiate(bullet, firePos.position, firePos.rotation) as BulletController;
+
+                player.Instance.Damage(2);
+
                 newBullet.speed = bulletSpeed;
             }
         }

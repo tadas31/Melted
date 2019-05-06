@@ -36,4 +36,13 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+
+    void GameOver()
+    {
+        if (player.Instance.health <= 0)
+        {
+
+            Time.timeScale = 0;
+        }
+    }
 }

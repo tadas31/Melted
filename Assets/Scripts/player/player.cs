@@ -57,12 +57,16 @@ public class player : MonoBehaviour
         //    theGun.isFiring = false;
 
         if (inputManager.GetButtonDown("fire"))
+        {
             theGun.isFiring = true;
+        }
         if (inputManager.GetButtonUp("fire"))
+        {
             theGun.isFiring = false;
+        }
 
 
-        
+
 
 
         if (Input.GetKeyDown(KeyCode.KeypadMinus))

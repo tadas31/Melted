@@ -19,6 +19,7 @@ public class SaveState
         new KeyBindings("down", KeyCode.S),
         new KeyBindings("left", KeyCode.A ),
         new KeyBindings("right",KeyCode.D),
+        new KeyBindings("interact",KeyCode.E),
         new KeyBindings("fire", KeyCode.Mouse0) };
 
 
