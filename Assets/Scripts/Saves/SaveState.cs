@@ -20,6 +20,7 @@ public class SaveState
         new KeyBindings("left", KeyCode.A ),
         new KeyBindings("right",KeyCode.D),
         new KeyBindings("interact",KeyCode.E),
+        new KeyBindings("pause",KeyCode.Escape),
         new KeyBindings("fire", KeyCode.Mouse0) };
 
 

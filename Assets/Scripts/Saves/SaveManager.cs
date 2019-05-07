@@ -13,8 +13,6 @@ public class SaveManager : MonoBehaviour
         Instance = this;
         //ResetSave();
         Load();
-
-        Debug.Log(SaveHelper.Serialize<SaveState>(state));
     }
 
     public void Save()

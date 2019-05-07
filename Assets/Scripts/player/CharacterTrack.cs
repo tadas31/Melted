@@ -44,6 +44,8 @@ public class CharacterTrack : MonoBehaviour
             {
                 if (_player[i].tag == "Player")
                     _brushSize = 5;
+                else if (_player[i].tag == "CampFire")
+                    _brushSize = 7;
                 else
                     _brushSize = 2;
 

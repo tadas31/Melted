@@ -9,8 +9,8 @@ public class player : MonoBehaviour
 
 
     public float moveSpeed;
-    public int health = 100;
-    private int currHealth;
+    public float health = 100;
+    private float currHealth;
 
     public event Action<float, float> OnHealthPctChanged = delegate { };
     public PlayerGun theGun;
@@ -66,7 +66,9 @@ public class player : MonoBehaviour
         }
 
 
-
+        //if not regenereating loose health
+        if (Time.timeScale == 1)
+            Damage(0.5f);
 
 
         if (Input.GetKeyDown(KeyCode.KeypadMinus))
@@ -78,18 +80,23 @@ public class player : MonoBehaviour
 
     }
 
-    public void Damage(int amount)
+    public void Damage(float amount)
     {
         currHealth -= amount;
         float currentHealthPct = (float)currHealth / (float)health;
         OnHealthPctChanged(currentHealthPct, 0.5f);
     }
 
-    public void Heal(int amount, float speed)
+    public void Heal(float amount, float speed)
     {
         currHealth += amount;
         float currentHealthPct = (float)currHealth / (float)health;
         OnHealthPctChanged(currentHealthPct, speed);
+    }
+
+    public float GetHealth()
+    {
+        return currHealth;
     }
 
 

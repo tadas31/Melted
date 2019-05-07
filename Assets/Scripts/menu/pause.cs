@@ -5,9 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class pause : MonoBehaviour
 {
-
-    public void TaskOnBackClick()
+    public void TaskOnBackToGameClick()
     {
-        SceneManager.LoadScene("WorldSelection");
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
     }
+
+    public void TaskOnBackToMenuClick()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void TaskOnRestartClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    
 }
