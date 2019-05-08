@@ -23,7 +23,8 @@ public class SaveState
         new KeyBindings("pause",KeyCode.Escape),
         new KeyBindings("fire", KeyCode.Mouse0) };
 
-
+    public float musicVolume = 0.5f;
+    public float effectsVolume = 0.5f;
 }
 
 public class KeyBindings

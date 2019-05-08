@@ -68,7 +68,7 @@ public class player : MonoBehaviour
 
         //if not regenereating loose health
         if (Time.timeScale == 1)
-            Damage(0.5f);
+            Damage(0.5f * Time.deltaTime);
 
 
         if (Input.GetKeyDown(KeyCode.KeypadMinus))

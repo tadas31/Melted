@@ -13,6 +13,7 @@ public class SaveManager : MonoBehaviour
         Instance = this;
         //ResetSave();
         Load();
+        Debug.Log(SaveHelper.Serialize<SaveState>(state));
     }
 
     public void Save()
@@ -80,5 +81,27 @@ public class SaveManager : MonoBehaviour
     public AllScores[] GetScores()
     {
         return state.Score;
+    }
+
+    public void setMusicVolume(float value)
+    {
+        state.musicVolume = value;
+        Save();
+    }
+
+    public float getMusicVolume()
+    {
+        return state.musicVolume;
+    }
+
+    public void setEffectsVolume(float value)
+    {
+        state.effectsVolume = value;
+        Save();
+    }
+
+    public float getEffectsVolume()
+    {
+        return state.effectsVolume;
     }
 }

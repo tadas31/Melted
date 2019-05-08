@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.UIElements;
 using UnityEngine.SceneManagement;
 
 public class menu : MonoBehaviour
@@ -10,7 +9,12 @@ public class menu : MonoBehaviour
     public Canvas settings;
     public Canvas leaderBord;
 
-     public void TaskOnPlayClick()
+    public void Awake()
+    {
+        AudioManager.instance.adSource.volume = SaveManager.Instance.getMusicVolume();
+    }
+
+    public void TaskOnPlayClick()
     {
         SceneManager.LoadScene("WorldSelection");
     }
