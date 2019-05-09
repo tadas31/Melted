@@ -73,9 +73,12 @@ public class GameManager : MonoBehaviour
     {
         score += Time.deltaTime;
 
-        //if enemy is killed add 100 points
-
         scoreText.text = "Score: " + (int)score;
+    }
+
+    public void addScoreOnKill()
+    {
+        score += 100;
     }
 
     public int GetScore()

@@ -55,18 +55,23 @@ public class enemy : MonoBehaviour
             gun.isFiring = true;
             if (distance <= agent.stoppingDistance)
                 FaceTarget();
-            transform.Find("EnemyHealthBar").gameObject.SetActive(true);
+            
             isChasing = true;
         }
         else
         {
-            transform.Find("EnemyHealthBar").gameObject.SetActive(false);
+            
             gun.isFiring = false;
             isChasing = false;           
         }
+        if(distance <= lookRadius + 5)
+            transform.Find("EnemyHealthBar").gameObject.SetActive(true);
+        else
+            transform.Find("EnemyHealthBar").gameObject.SetActive(false);
 
-        if(currHealth <= 0)
+        if (currHealth <= 0)
         {
+            GameManager.Instance.addScoreOnKill();
             Destroy(gameObject);           
             EnemyManager.instance.enemies = EnemyManager.instance.enemies.Where(val => val != gameObject).ToArray();
         }
