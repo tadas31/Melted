@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class EnemyHealthBar : MonoBehaviour
 {
     [SerializeField]
     private Image foregroundImg;
@@ -12,7 +12,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        GetComponentInParent<player>().OnHealthPctChanged += HandleHealthChanged;
+        GetComponentInParent<enemy>().OnHealthPctChanged += HandleHealthChanged;
     }
 
     private void HandleHealthChanged(float pct, float speed)

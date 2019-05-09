@@ -28,6 +28,9 @@ public class BulletController : MonoBehaviour
         
         if (other.tag == "Enemy")
         {
+            Destroy(gameObject, 0.3f);
+            CharacterTrack.Instance._player.Remove(gameObject.transform);
+            EnemyManager.instance.doDamage(other.gameObject);
             //do damage to enemy and disapear
         }
     }

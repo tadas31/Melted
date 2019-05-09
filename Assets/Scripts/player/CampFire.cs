@@ -29,7 +29,7 @@ public class CampFire : MonoBehaviour
 
 
         if (isByFire && isFireLit  && player.Instance.GetHealth() <= 100)
-            player.Instance.Damage(-1f);
+            player.Instance.Damage(-1f * Time.deltaTime);
 
         if (!isFireLit && isByFire && inputManager.GetButtonDown("interact"))
         {

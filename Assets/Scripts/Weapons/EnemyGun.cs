@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyGun : MonoBehaviour
 {
-    public bool isFiring = true;
+    public bool isFiring;
 
     public EnemyBulletController bullet;
     public float bulletSpeed;
