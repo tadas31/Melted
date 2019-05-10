@@ -7,10 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { set; get; }
 
-    private Canvas pauseCanvas;
-    private Canvas gameOver;
-    private Text scoreText;
-    private Text gameOverScoreText;
+    public Canvas pauseCanvas;
+    public Canvas gameOver;
+    public Text scoreText;
+    public Text gameOverScoreText;
 
     private float score;
 
@@ -22,14 +22,14 @@ public class GameManager : MonoBehaviour
         inputManager = GameObject.FindObjectOfType<inputManager>();
         Time.timeScale = 1;
         score = 0;
-        pauseCanvas = GameObject.Find("Pause").GetComponent<Canvas>();
-        pauseCanvas.gameObject.SetActive(false);
+        //pauseCanvas = GameObject.Find("Pause").GetComponent<Canvas>();
+        //pauseCanvas.gameObject.SetActive(false);
 
-        gameOver = GameObject.Find("GameOver").GetComponent<Canvas>();
-        gameOverScoreText = GameObject.Find("GameOver/Score").GetComponent<Text>();
-        gameOver.gameObject.SetActive(false);
+        //gameOver = GameObject.Find("GameOver").GetComponent<Canvas>();
+        //gameOverScoreText = GameObject.Find("GameOver/Score").GetComponent<Text>();
+        //gameOver.gameObject.SetActive(false);
 
-        scoreText = GameObject.Find("GameUI/Score").GetComponent<Text>();
+        //scoreText = GameObject.Find("GameUI/Score").GetComponent<Text>();
         Instance = this;
     }
 
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
 
         Score();
 
-        if (inputManager.GetButton("pause") && player.Instance.GetHealth() > 0)
+        if (inputManager.GetButtonDown("pause") && player.Instance.GetHealth() > 0)
             PauseGame();
 
         if (player.Instance.GetHealth() <= 0)
