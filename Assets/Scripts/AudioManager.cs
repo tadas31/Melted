@@ -79,6 +79,8 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    
+
     private void Awake()
     {      
         if (instance == null)
@@ -90,6 +92,8 @@ public class AudioManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        instance.adSource.volume = SaveManager.Instance.getMusicVolume(); 
 
         StartCoroutine(playAudioSequentially());
     }
